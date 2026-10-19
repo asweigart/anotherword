@@ -1,0 +1,29 @@
+[package]
+name = "anotherword"
+version = "0.1.0"
+edition = "2021"
+description = "Fast offline command-line thesaurus"
+license = "MIT"
+repository = "https://github.com/asweigart/anotherword"
+
+[[bin]]
+name = "anotherword"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rusqlite = { version = "0.31", features = ["bundled"] }
+strsim = "0.11"
+rphonetic = "3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ureq = "2"
+flate2 = "1"
+tar = "0.4"
+directories = "5"
+anyhow = "1"
+textwrap = "0.16"
+
+[profile.release]
+opt-level = 3
+lto = true
